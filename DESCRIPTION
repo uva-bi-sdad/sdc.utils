@@ -1,0 +1,14 @@
+Package: dc.utils
+Type: Package
+Title: Dataverse Standardization Checks
+Version: 0.1.0
+Authors@R: c(
+    person("Social and Decision Analytics Division (SDAD), Biocomplexity Institute, University of Virginia", role = c("aut")),
+    person("Kathryn", "Linehan", email = "kjl5t@virginia.edu", role = c("aut", "cre"))
+  )
+Description: Allows user to test their data on the UVA Dataverse for SDAD standards.  
+License: CC0 1.0
+Encoding: UTF-8
+LazyData: true
+Imports: dataverse, readr, httr, naniar, sf, crayon
+RoxygenNote: 7.1.2
