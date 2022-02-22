@@ -42,12 +42,15 @@ get_dataverse_dataset_files <- function(server = Sys.getenv("DATAVERSE_SERVER"),
 
     # Loop through all data files
     for(i in 1:length(datafile_name)){
+      # Only decompress .xz files (ignore any .json)
+      if(grepl("\\.xz$", datafile_name[i])){
       # Decompress file
-      lines <- readr::read_lines(df <- xzfile(datafile_name[i]))
+        lines <- readr::read_lines(df <- xzfile(datafile_name[i]))
       # Write file as a .csv in cd
-      readr::write_lines(lines, gsub("\\.xz$", "", datafile_name[i]))
+        readr::write_lines(lines, gsub("\\.xz$", "", datafile_name[i]))
       # Remove compressed files
-      file.remove(datafile_name[i])
+        file.remove(datafile_name[i])
+      }
     }
 
     # Remove MANIFEST.TXT
