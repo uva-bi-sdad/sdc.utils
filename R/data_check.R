@@ -10,6 +10,8 @@
 #' @import naniar
 #' @import sf
 #' @import crayon
+#' @import RPostgreSQL
+#' @import DBI
 #' @export
 #' @examples
 #' \dontrun{data_check <- function(version = ":draft", doi = "doi:XXX")}
@@ -26,7 +28,14 @@ data_check <- function(server = Sys.getenv("DATAVERSE_SERVER"),
   std_col_names <- c("geoid", "region_type", "region_name", "year", "measure", "value", "measure_type")
   std_region_types <- c("health district", "county", "tract", "block group", "neighborhood")
 
-  con <- get_db_conn()
+  con <- RPostgreSQL::dbConnect(
+    drv = RPostgreSQL::PostgreSQL(),
+    dbname = Sys.getenv("db_nam"),
+    host = Sys.getenv("db_hst"),
+    port = Sys.getenv("db_prt"),
+    user = Sys.getenv("db_usr"),
+    password = Sys.getenv("db_pwd")
+  )
   ncr_cttrbg_geos <- DBI::dbGetQuery(con, "SELECT * FROM dc_geographies.ncr_cttrbg_tiger_2010_2020_geo_names")
   ncr_sd_geos <- DBI::dbGetQuery(con, "SELECT * FROM dc_geographies.ncr_sd_nces_2021_school_district_names")
   va_arl_ca_geos <- DBI::dbGetQuery(con, "SELECT * FROM dc_geographies.va_013_arl_2020_civic_assoc_geo_names")

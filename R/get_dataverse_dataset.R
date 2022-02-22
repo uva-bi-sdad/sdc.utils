@@ -9,6 +9,7 @@
 #' @import httr
 #' @import dataverse
 #' @import readr
+#' @import utils
 #' @export
 #' @examples
 #' \dontrun{get_dataverse_dataset_files <- function(version = ":draft", doi = "doi:XXX")}
@@ -35,7 +36,7 @@ get_dataverse_dataset_files <- function(server = Sys.getenv("DATAVERSE_SERVER"),
                      httr::write_disk("files.zip", overwrite=TRUE))
 
     # Unzip .zip file
-    unzip("files.zip", overwrite = TRUE)
+    utils::unzip("files.zip", overwrite = TRUE)
     # Remove the .zip file
     file.remove("files.zip")
 
