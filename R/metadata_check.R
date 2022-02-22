@@ -1,4 +1,17 @@
-library(jsonlite)
+#' Dataverse Metadata Check
+#'
+#' Checks Dataverse metadata against the SDAD standards and website metadata.
+#'
+#' @param server Sys.getenv("DATAVERSE_SERVER")
+#' @param key Sys.getenv("DATAVERSE_KEY")
+#' @param version version of dataset. options are :draft, :latest, :latest-published, or a specific version number
+#' @param doi dataset doi or vector of dois
+#' @import jsonlite
+#' @import readr
+#' @export
+#' @examples
+#' \dontrun{metadata_check(version = ":draft", doi = "doi:XXX")}
+
 
 metadata_check <- function(server = Sys.getenv("DATAVERSE_SERVER"),
                                         key = Sys.getenv("DATAVERSE_KEY"),
@@ -10,7 +23,7 @@ metadata_check <- function(server = Sys.getenv("DATAVERSE_SERVER"),
   file_names <- get_dataverse_dataset_files(server=Sys.getenv("DATAVERSE_SERVER"),
                                             key=Sys.getenv("DATAVERSE_KEY"), version = ":latest",
                                             doi = "doi:10.18130/V3/LZQEAI")
-  measure_info <- read_json("measure_info.json")
+  measure_info <- jsonlite::read_json("measure_info.json")
   measures <- names(measure_info)
 
   # get data files from Dataverse --------------------------

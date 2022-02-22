@@ -10,5 +10,5 @@ Description: Allows user to test their data on the UVA Dataverse for SDAD standa
 License: CC0
 Encoding: UTF-8
 LazyData: true
-Imports: dataverse, readr, httr, naniar, sf, crayon, utils, RPostgreSQL, DBI
+Imports: dataverse, readr, httr, naniar, sf, crayon, utils, RPostgreSQL, DBI, jsonlite
 RoxygenNote: 7.1.2

@@ -24,5 +24,5 @@ data_check(
 Checks Dataverse dataset files against the SDAD standards.
 }
 \examples{
-\dontrun{data_check <- function(version = ":draft", doi = "doi:XXX")}
+\dontrun{data_check(version = ":draft", doi = "doi:XXX")}
 }

@@ -14,7 +14,7 @@
 #' @import DBI
 #' @export
 #' @examples
-#' \dontrun{data_check <- function(version = ":draft", doi = "doi:XXX")}
+#' \dontrun{data_check(version = ":draft", doi = "doi:XXX")}
 
 
 data_check <- function(server = Sys.getenv("DATAVERSE_SERVER"),
