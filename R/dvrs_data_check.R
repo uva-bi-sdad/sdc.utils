@@ -14,10 +14,10 @@
 #' @import DBI
 #' @export
 #' @examples
-#' \dontrun{data_check(version = ":draft", doi = "doi:XXX")}
+#' \dontrun{dvrs_data_check(version = ":draft", doi = "doi:XXX")}
 
 
-data_check <- function(server = Sys.getenv("DATAVERSE_SERVER"),
+dvrs_data_check <- function(server = Sys.getenv("DATAVERSE_SERVER"),
                        key = Sys.getenv("DATAVERSE_KEY"),
                        version = NULL,
                        doi = NULL)

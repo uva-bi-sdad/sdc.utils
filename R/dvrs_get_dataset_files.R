@@ -12,10 +12,10 @@
 #' @import utils
 #' @export
 #' @examples
-#' \dontrun{get_dataverse_dataset_files(version = ":draft", doi = "doi:XXX")}
+#' \dontrun{dvrs_get_dataset_files(version = ":draft", doi = "doi:XXX")}
 
 
-get_dataverse_dataset_files <- function(server = Sys.getenv("DATAVERSE_SERVER"),
+dvrs_get_dataset_files <- function(server = Sys.getenv("DATAVERSE_SERVER"),
                                         key = Sys.getenv("DATAVERSE_KEY"),
                                         version = NULL,
                                         doi = NULL)

@@ -10,10 +10,10 @@
 #' @import readr
 #' @export
 #' @examples
-#' \dontrun{metadata_check(version = ":draft", doi = "doi:XXX")}
+#' \dontrun{dvrs_metadata_check(version = ":draft", doi = "doi:XXX")}
 
 
-metadata_check <- function(server = Sys.getenv("DATAVERSE_SERVER"),
+dvrs_metadata_check <- function(server = Sys.getenv("DATAVERSE_SERVER"),
                                         key = Sys.getenv("DATAVERSE_KEY"),
                                         version = NULL,
                                         doi = NULL)

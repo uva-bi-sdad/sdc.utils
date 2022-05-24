@@ -1,14 +1,32 @@
 Package: dc.utils
 Type: Package
-Title: Dataverse Standardization Checks
+Title: Data Commons Utility Functions
 Version: 0.1.0
 Authors@R: c(
     person("Social and Decision Analytics Division (SDAD), Biocomplexity Institute, University of Virginia", role = c("aut")),
-    person("Kathryn", "Linehan", email = "kjl5t@virginia.edu", role = c("aut", "cre"))
+    person("Aaron", "Schroeder", email = "dads2busy@gmail.com", role = c("aut", "cre")),
+    person("Kathryn", "Linehan", email = "kjl5t@virginia.edu", role = c("aut")),
+    person("Micah", "Iserman", email = "micah.iserman@gmail.com", role = c("aut"))
   )
-Description: Allows user to test their data on the UVA Dataverse for SDAD standards.  
+Description: Common Utility Functions Supporting Data Repository Construction and Maintenance
 License: CC0
 Encoding: UTF-8
+Depends: R (>= 3.0.0)
 LazyData: true
-Imports: dataverse, readr, httr, naniar, sf, crayon, utils, RPostgreSQL, DBI, jsonlite
+Imports: 
+    dataverse, 
+    readr, 
+    httr, 
+    naniar, 
+    sf, 
+    crayon, 
+    utils, 
+    RPostgreSQL, 
+    DBI, 
+    jsonlite,
+    data.table (>= 1.9.4),
+    lubridate (>= 1.5.0),
+    stringr (>= 1.1.0),
+    magrittr,
+    jsonlite
 RoxygenNote: 7.1.2

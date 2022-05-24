@@ -4,16 +4,18 @@
 \name{dc.utils-package}
 \alias{dc.utils}
 \alias{dc.utils-package}
-\title{dc.utils: Dataverse Standardization Checks}
+\title{dc.utils: Data Commons Utility Functions}
 \description{
-Allows user to test their data on the UVA Dataverse for SDAD standards.
+Common Utility Functions Supporting Data Repository Construction and Maintenance
 }
 \author{
-\strong{Maintainer}: Kathryn Linehan \email{kjl5t@virginia.edu}
+\strong{Maintainer}: Aaron Schroeder \email{dads2busy@gmail.com}
 
 Authors:
 \itemize{
   \item Social and Decision Analytics Division (SDAD), Biocomplexity Institute, University of Virginia
+  \item Kathryn Linehan \email{kjl5t@virginia.edu}
+  \item Micah Iserman \email{micah.iserman@gmail.com}
 }
 
 }
