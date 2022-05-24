@@ -1,3 +1,13 @@
+#' Set up directories and sample files for creating a new dataset
+#'
+#' @param dataset_info_yml_file_path Yaml settings file for new dataset
+#' @param code_files Code file type preference. Currently only .R
+#' @param overwrite Overwrite existing directories and sample files
+#' @import yaml
+#' @import tools
+#' @export
+#' @examples
+#' new_dataset_setup(dataset_info_yml_file_path = "src/01_data/00_dataset_yaml_files/us_census_counties_geo_2010.yml", code_files = "R", overwrite = TRUE)
 utl_new_dataset_setup <- function(dataset_info_yml_file_path = "src/01_data/00_dataset_yaml_files/fairfax_county_zip_codes_geo.yml",
                               code_files = "R",
                               overwrite = FALSE) {
