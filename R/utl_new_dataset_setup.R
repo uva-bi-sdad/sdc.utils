@@ -68,6 +68,13 @@ utl_new_dataset_setup <- function(dataset_info_yml_file_path = "src/01_data/00_d
         }
         dwnld_cmd <- paste0("\ndownload.file(source_file, \"", dwnld_file_path, "\")")
         data_files_original <- c(data_files_original, dwnld_file_path)
+      } else if (tolower(substr(dwnld_file_url, 1, 2)) == "s3") {
+        dwnld_file_path <- file.path(dwnld_fld, paste0(data_file_basename, ".", dataset_info$dataset_source_files[[i]]$format))
+        if (tolower(tools::file_ext(dwnld_file_url)) == "zip") {
+          dwnld_file_path <- file.path(dwnld_fld, basename(dataset_info$dataset_source_files[[i]]$url))
+        }
+        dwnld_cmd <- snippet_s3(dwnld_file_url, dwnld_file_path)
+        data_files_original <- c(data_files_original, dwnld_file_path)
       } else {
         copy_file_path <- file.path(dwnld_fld, basename(dataset_info$dataset_source_files[[i]]$url))
         copy_cmd <- paste0("\nfile.copy(source_file, \"", copy_file_path, "\")")
