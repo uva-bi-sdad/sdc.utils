@@ -18,6 +18,10 @@ utl_new_dataset_setup <- function(dataset_info_yml_file_path = "src/01_data/00_d
   data_files_original <- character()
 
   data_file_original_path <- file.path("data", data_file_basename, "original", paste0(data_file_basename, ".geojson"))
+
+  data_file_prepared_path <- file.path("data", data_file_basename, "prepared", paste0(data_file_basename, ".geojson"))
+  if (file.exists(data_file_prepared_path)) unlink(data_file_prepared_path)
+
   data_file_distribution_path <- file.path("data", data_file_basename, "distribution", paste0(data_file_basename, ".geojson"))
   if (file.exists(data_file_distribution_path)) unlink(data_file_distribution_path)
 
@@ -34,6 +38,10 @@ utl_new_dataset_setup <- function(dataset_info_yml_file_path = "src/01_data/00_d
     ds_work = list(
       pth = file.path("data", data_file_basename, "working"),
       dsc = "working/scratch files"
+    ),
+    ds_prep = list(
+      pth = file.path("data", data_file_basename, "prepared"),
+      dsc = "files prepared for distribution"
     ),
     ds_dist = list(
       pth = file.path("data", data_file_basename, "distribution"),
